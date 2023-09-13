@@ -38,11 +38,9 @@ class MainActivity : ComponentActivity() {
             var name by remember {
                 mutableStateOf("")
             }
-
             var names by remember {
                 mutableStateOf(listOf<String>())
             }
-
             JetPackComposeTheme {
               Column(
                   modifier = Modifier
@@ -73,11 +71,12 @@ class MainActivity : ComponentActivity() {
                           Text(text = "Add")
                       }
                   }
-                 NameList(names = names)
+                 NameList(names = names) //Reusable Code
               }
             }
         }
     }
+
 }
 
 @Composable
@@ -98,6 +97,5 @@ fun NameList(
             Divider()
         }
     }
-    
     
 }
